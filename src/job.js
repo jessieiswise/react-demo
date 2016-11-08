@@ -21,7 +21,7 @@ export default StyleSheet.create({
     },
     "job": {
         "height": 150,
-        "border": "1px solid #a2a2c3",
+        "borderBottom": "1px solid #a2a2c3",
         "display": "flex"
     },
     "stop": {

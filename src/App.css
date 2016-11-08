@@ -6,7 +6,7 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40px;
-  right:0;
+  right:10px;
   position:absolute;
 }
 
@@ -17,15 +17,57 @@
   color: white;
 }
 
+.menu-render{
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index: 1;
+}
+
+.modal-mask{
+  z-index: 2;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color: #000;
+  opacity:0.4;
+}
+
+.menu-container{
+  width:350px;
+  left:0;
+  top:0;
+  bottom:0;
+  position:fixed;
+  background-color: #fff;
+  z-index: 3;
+}
+
+.menu-header{
+  width:100%;
+  background-color:#d84314;
+  opacity:0.85;
+  text-align: center;
+  top:0;
+  padding-top:10px;
+  height:40px;
+  color:#fff;
+  font-size: 24px;
+}
 
 .App-menu{
+  cursor:pointer;
   background: url(https://convoy.com/wp-content/themes/convoy/images/btn-menu.png) no-repeat center center;
   width:40px;
   height:28px;
   left:0;
   position:absolute;
   padding-left:10px;
-  padding-top:10px
+  padding-top:10px;
 }
 
 
@@ -40,11 +82,12 @@
 }
 .example-enter {
   max-height : 0 ;
-  transition : all .7s ease-in;
+  transition : all 1.05s linear;
   opacity:0;
 }
 
 .example-enter.example-enter-active {
+
   max-height : 1000px;
   opacity: 1;
 
