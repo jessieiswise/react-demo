@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import logo from './logo.svg';
 import './App.css';
 
@@ -26,7 +25,7 @@ export class AppHeader extends Component {
       <div className="App-header">
         <div className='App-menu' onClick={this._onButtonClick}></div>
         {this.state.showComponent ?
-          <AppMenu unmountMe={this.handleChildUnmount} /> :
+              <AppMenu unmountMe={this.handleChildUnmount} key={this.menuKey} /> :
           null
        }
         <img src={logo} className="App-logo" alt="logo" />
@@ -46,11 +45,25 @@ export class AppMenu extends Component{
   render(){
     return(
       <div className='menu-render'>
-        <div className='menu-container'>
-          <div className='menu-header'>
-            <span>MENU</span>
+
+          <div className='menu-container' key='1'>
+            <div className='menu-header'>
+              <span>MENU</span>
+            </div>
+            <div className='menu-entry'>
+              <span>Current Jobs</span>
+            </div>
+            <div className='menu-entry'>
+              <span>Available Bids</span>
+            </div>
+            <div className='menu-entry'>
+              <span>History</span>
+            </div>
+            <div className='menu-entry'>
+              <span>Settings</span>
+            </div>
           </div>
-        </div>
+
         <div className='modal-mask' onClick={this.dismiss}>
         </div>
       </div>

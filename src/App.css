@@ -38,7 +38,7 @@
 }
 
 .menu-container{
-  width:350px;
+  width:300px;
   left:0;
   top:0;
   bottom:0;
@@ -54,7 +54,7 @@
   text-align: center;
   top:0;
   padding-top:10px;
-  height:40px;
+  height:46px;
   color:#fff;
   font-size: 24px;
 }
@@ -70,6 +70,18 @@
   padding-top:10px;
 }
 
+.menu-entry{
+  border-bottom:2px solid #666;
+  height:30px;
+  color:#666;
+  padding-top:10px;
+
+}
+
+.menu-entry:hover{
+  background-color: #e0e0e0;
+  cursor:pointer;
+}
 
 
 .App-intro {
@@ -79,6 +91,13 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+.slideout-enter{
+  width:0;
+  transition: all .5s ease-in;
+}
+.slideout-enter.slideout-enter-active{
+  width:350px
 }
 .example-enter {
   max-height : 0 ;

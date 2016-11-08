@@ -46,7 +46,7 @@ export default StyleSheet.create({
         "opacity": 0.4
     },
     "menu-container": {
-        "width": 350,
+        "width": 300,
         "left": 0,
         "top": 0,
         "bottom": 0,
@@ -61,7 +61,7 @@ export default StyleSheet.create({
         "textAlign": "center",
         "top": 0,
         "paddingTop": 10,
-        "height": 40,
+        "height": 46,
         "color": "#fff",
         "fontSize": 24
     },
@@ -75,8 +75,25 @@ export default StyleSheet.create({
         "paddingLeft": 10,
         "paddingTop": 10
     },
+    "menu-entry": {
+        "borderBottom": "2px solid #666",
+        "height": 30,
+        "color": "#666",
+        "paddingTop": 10
+    },
+    "menu-entry:hover": {
+        "backgroundColor": "#e0e0e0",
+        "cursor": "pointer"
+    },
     "App-intro": {
         "fontSize": "large"
+    },
+    "slideout-enter": {
+        "width": 0,
+        "transition": "all .5s ease-in"
+    },
+    "slideout-enterslideout-enter-active": {
+        "width": 350
     },
     "example-enter": {
         "maxHeight": 0,
