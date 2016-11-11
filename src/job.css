@@ -18,15 +18,11 @@
 
   height:auto;
   border-bottom: 1px solid #a2a2c3;
-  /*margin-left:auto;
-  margin-right:auto;
-  margin-top:10px;
-  margin-bottom:10px;*/
   display:flex
 }
 .stop{
+  display:flex;
   width:40%;
-
   border-left:1px solid #666;
   font-size:12px;
   padding-left:10px;
@@ -34,7 +30,6 @@
 }
 
 .details{
-
   font-size:18px;
   font-weight:bold;
   margin-top:auto;
@@ -45,4 +40,32 @@
 .stop span{
   line-height: 25px;
   font-size:14px;
-  padding-right: 10px}
+  padding-right: 5px}
+
+.stop-details{
+  width:55%
+}
+.stop-details div{
+  font-size:16px;
+}
+.stop-pics{
+  width:45%;
+  height:100%
+}
+
+.stop-pics div{
+  height:50%;
+}
+.pic-header k img{
+  height:50px;
+  width:50px;
+}
+.pic-header>img {
+  height:50px;
+  width:50px;
+  cursor:pointer;
+}
+.pic-header span{
+  display:block;
+}
+.upload-container{opacity:0}

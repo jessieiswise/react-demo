@@ -30,6 +30,7 @@ export default StyleSheet.create({
         "display": "flex"
     },
     "stop": {
+        "display": "flex",
         "width": "40%",
         "borderLeft": "1px solid #666",
         "fontSize": 12,
@@ -47,6 +48,34 @@ export default StyleSheet.create({
     "stop span": {
         "lineHeight": 25,
         "fontSize": 14,
-        "paddingRight": 10
+        "paddingRight": 5
+    },
+    "stop-details": {
+        "width": "55%"
+    },
+    "stop-details div": {
+        "fontSize": 16
+    },
+    "stop-pics": {
+        "width": "45%",
+        "height": "100%"
+    },
+    "stop-pics div": {
+        "height": "50%"
+    },
+    "pic-header k img": {
+        "height": 50,
+        "width": 50
+    },
+    "pic-header>img": {
+        "height": 50,
+        "width": 50,
+        "cursor": "pointer"
+    },
+    "pic-header span": {
+        "display": "block"
+    },
+    "upload-container": {
+        "opacity": 0
     }
 });
