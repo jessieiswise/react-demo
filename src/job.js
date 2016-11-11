@@ -21,20 +21,22 @@ export default StyleSheet.create({
     "Job-picture": {
         "width": 100
     },
+    "details-container": {
+        "width": "20%"
+    },
     "job": {
         "height": "auto",
         "borderBottom": "1px solid #a2a2c3",
         "display": "flex"
     },
     "stop": {
-        "width": 500,
+        "width": "40%",
         "borderLeft": "1px solid #666",
         "fontSize": 12,
         "paddingLeft": 10,
         "textAlign": "left"
     },
     "details": {
-        "width": 200,
         "fontSize": 18,
         "fontWeight": "bold",
         "marginTop": "auto",
