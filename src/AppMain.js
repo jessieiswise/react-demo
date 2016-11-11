@@ -23,7 +23,7 @@ var App = React.createClass ({
     var jobsData = getJobs();
     var jobslist = jobsData.map(function(job){
        return <Job key={job.referenceId} jobDescription={job.title}
-              jobId={job.referenceId} stops={job.stops} />;
+              jobId={job.referenceId} stops={job.stops} job={job} />;
        })
     var child = this.state.mounted ? jobslist : null;
     return (

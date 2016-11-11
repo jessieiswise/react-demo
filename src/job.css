@@ -2,18 +2,20 @@
   position:relative;
   left:10px;
   margin:10px;
+  height: 100px;
+  width:100px;
   border-radius:150px;
   background-color:#e0e0eb
 }
 
 .Job-picture{
-  width:80px;
+  width:100px
 
 }
 
 .job{
 
-  height:100px;
+  height:auto;
   border-bottom: 1px solid #a2a2c3;
   /*margin-left:auto;
   margin-right:auto;
@@ -22,28 +24,24 @@
   display:flex
 }
 .stop{
-  width:350px;
+  width:500px;
 
   border-left:1px solid #666;
   font-size:12px;
-
-  padding-top:30px;
   padding-left:10px;
   text-align: left
 }
-.job:hover{
-  background-color: #e0e0e0;
-  cursor:pointer;
-}
+
 .details{
-  width:300px;
-  font-size:16px;
+  width:200px;
+  font-size:18px;
   font-weight:bold;
   margin-top:auto;
   margin-bottom:auto;
   margin-left: 10px;
   text-align: left
 }
-.detail-back a{
-  color:#000;
-}
+.stop span{
+  line-height: 25px;
+  font-size:14px;
+  padding-right: 10px}

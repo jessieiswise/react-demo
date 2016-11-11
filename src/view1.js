@@ -2,35 +2,18 @@ import React, { Component } from 'react';
 import './App.css';
 import './job.css';
 
-
-
-
-//for the sake of this exercise, i will extract to and from from title
 class Job extends Component{
+  getMetaData(){
 
-  constructor(props){
-    super(props)
-    this.state= {
-      showComponent: false,
-    };
-    this._onButtonClick = this._onButtonClick.bind(this);
-    this.handleChildUnmount = this.handleChildUnmount.bind(this);
+    var jobID = this.props.jobId
+    if (localStorage.getItem(jobID) === null) {
+    //...
   }
-  handleChildUnmount(){
-      console.log(this)
-      this.setState({showComponent: false});
-  }
-  _onButtonClick() {
-    console.log(this)
-    this.setState({
-      showComponent: true,
-      });
   }
   render()  {
-    var job = this
+
     var stopslist = this.props.stops.map(function(stop){
                      return <Stop
-                     click={job._onButtonClick}
                      key={stop.address}
                      active={false}
                      address={stop.address}
@@ -40,11 +23,8 @@ class Job extends Component{
                       cargoDescription={stop.cargoDescription}/>;
                    })
     return(
-    <div className='job'>
-      {this.state.showComponent ?
-            <JobDetail unmountMe={this.handleChildUnmount} key={this.props.jobId}  /> :
-        <div  className='job' onClick={this._onButtonClick}>
-
+      <div  className='job' >
+        <div>
           <div className='Job-picture-container'>
             <img className='Job-picture' alt='genericlogo' src='http://files-asia.gbca.org.au/members/companylogo/placeholder-logo.png'/>
           </div>
@@ -52,68 +32,51 @@ class Job extends Component{
             <div>{this.props.jobDescription}</div>
             <div>Shipment ID: {this.props.jobId}</div>
           </div>
-          {stopslist}
-          <div className='actions'>
-          </div>
         </div>
-     }
-    </div>
 
+        {stopslist}
+        <div className='actions'>
+        </div>
+      </div>
     )}
 }
 export default Job;
 
-class JobDetail extends Component{
-  constructor(props){
-    super(props)
-
-    this.dismiss = this.dismiss.bind(this);
-  }
-  dismiss() {
-      this.props.unmountMe();
-  }
-  render(){
-      return(
-        <div className='job-detail'>
-          <div className='detail-back'>
-            <a className='back-action' onClick={this.dismiss} href='#'>{"<< BACK"}</a>
-          </div>
-          <div>
-            <span>CHECKLIST</span>
-          </div>
-          <div>
-            <div>
-              <span>DETAILS</span>
-              <span>Type:{ this.props.stop}</span>
-              <span>Address:  </span>
-              <span>Contents: </span>
-              <span>Delivery Time:</span>
-            </div>
-            <div>
-              <span>ACTIONS</span>
-              <span>Upload Photo(s)</span>
-              <span>Upload Bill Of Landing</span>
-              <span>Confirm Pickup/Dropoff</span>
-            </div>
-          </div>
-        </div>
-      )
-  }
-}
-
-  // {this.props.cargoDescription ? <div><font>Contents:</font> <b>{this.props.cargoDescription}</b></div>:''}
 class Stop extends Component{
   constructor(props){
     super(props)
   }
+  onPhotoUpload(event){
+    var reader = new FileReader();
+    reader.onload = function( e ){
+          console.log('mewo')
+         window.localStorage.setItem( "image-base64", e.target.result );
+       };
+       reader.readAsDataURL( event.target.files[ 0 ] );
+     var imgContainer = document.getElementById( "image-container" );
+     imgContainer.src = window.localStorage.getItem( "image-base64" );
+
+  }
+  onBOLUpload(event){
+    var fileList = event.target.files
+
+  }
+
   render(){
 
     return(
       <div className='stop'  >
-        <div><font>Type:</font><b> {this.props.type}</b></div>
-        <div><font>Address:</font> <b>{this.props.address}</b></div>
-
-        <div><font>Arrival time:</font><b> {timeConverter(this.props.arrivalTime)}</b></div>
+        <div><span>Type:</span><b> {this.props.type}</b></div>{this.props.cargoDescription ? <div><font>Contents:</font> <b>{this.props.cargoDescription}</b></div>:''}
+        <div><span>Address:</span> <b>{this.props.address}</b></div>
+        <div><span>Arrival time:</span><b> {timeConverter(this.props.arrivalTime)}</b></div>
+        <div><span>Picked Up/Delivered:</span>
+          <select>
+            <option>No</option>
+            <option>Yes</option>
+          </select>
+      </div>
+        <div><span>Bill Of Landing:</span><img id="bol-container" /> <input  onChange={this.onPhotoUpload.bind(this)} type="file" name="pic" accept="image/*"/></div>
+        <div><span>Cargo Picture: </span><img id="image-container" /> <input onChange={this.onPhotoUpload.bind(this)} type="file" name="pic" accept="image/*" /></div>
       </div>
     )
   }

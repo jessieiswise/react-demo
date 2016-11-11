@@ -13,39 +13,38 @@ export default StyleSheet.create({
         "marginRight": 10,
         "marginBottom": 10,
         "marginLeft": 10,
+        "height": 100,
+        "width": 100,
         "borderRadius": 150,
         "backgroundColor": "#e0e0eb"
     },
     "Job-picture": {
-        "width": 80
+        "width": 100
     },
     "job": {
-        "height": 100,
+        "height": "auto",
         "borderBottom": "1px solid #a2a2c3",
         "display": "flex"
     },
     "stop": {
-        "width": 350,
+        "width": 500,
         "borderLeft": "1px solid #666",
         "fontSize": 12,
-        "paddingTop": 30,
         "paddingLeft": 10,
         "textAlign": "left"
     },
-    "job:hover": {
-        "backgroundColor": "#e0e0e0",
-        "cursor": "pointer"
-    },
     "details": {
-        "width": 300,
-        "fontSize": 16,
+        "width": 200,
+        "fontSize": 18,
         "fontWeight": "bold",
         "marginTop": "auto",
         "marginBottom": "auto",
         "marginLeft": 10,
         "textAlign": "left"
     },
-    "detail-back a": {
-        "color": "#000"
+    "stop span": {
+        "lineHeight": 25,
+        "fontSize": 14,
+        "paddingRight": 10
     }
 });
