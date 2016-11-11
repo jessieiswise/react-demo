@@ -7,13 +7,13 @@
 }
 
 .Job-picture{
-  width:130px;
+  width:80px;
 
 }
 
 .job{
 
-  height:150px;
+  height:100px;
   border-bottom: 1px solid #a2a2c3;
   /*margin-left:auto;
   margin-right:auto;
@@ -23,11 +23,17 @@
 }
 .stop{
   width:350px;
-  font-size:14px;
-  margin-top:auto;
-  margin-bottom:auto;
-  margin-left: 20px;
+
+  border-left:1px solid #666;
+  font-size:12px;
+
+  padding-top:30px;
+  padding-left:10px;
   text-align: left
+}
+.job:hover{
+  background-color: #e0e0e0;
+  cursor:pointer;
 }
 .details{
   width:300px;
@@ -37,4 +43,7 @@
   margin-bottom:auto;
   margin-left: 10px;
   text-align: left
+}
+.detail-back a{
+  color:#000;
 }

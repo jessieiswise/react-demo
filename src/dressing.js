@@ -13,6 +13,7 @@ export class AppHeader extends Component {
     this.handleChildUnmount = this.handleChildUnmount.bind(this);
   }
   handleChildUnmount(){
+      console.log(this)
       this.setState({showComponent: false});
   }
   _onButtonClick() {
@@ -40,12 +41,12 @@ export class AppMenu extends Component{
     this.dismiss = this.dismiss.bind(this);
   }
    dismiss() {
+
        this.props.unmountMe();
    }
   render(){
     return(
       <div className='menu-render'>
-
           <div className='menu-container' key='1'>
             <div className='menu-header'>
               <span>MENU</span>
